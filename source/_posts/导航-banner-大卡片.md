@@ -27,39 +27,40 @@ tags:
 HTML代码结构
 ```
 <div class="userCard">
-			<div class="pictureAndText clearfix">
-					<div class="picture"><img src="./images/icon.jpg" alt="logo"></div>
-					<div class="text">
-							<span class="welcome">HELLO
-									<span class="triangle"></span>
-							</span>
-							<h1>张三</h1>
-							<p>前端工程师</p>
-							<hr>
-							<dl class="clearfix">
-									<dt>年龄</dt>
-									<dd>18</dd>
-									<dt>所在城市</dt>
-									<dd>北京</dd>
-									<dt>手机</dt>
-									<dd>13812345678</dd>
-									<dt>邮箱</dt>
-									<dd>535435@qq.com</dd>
-							</dl>
-					</div>
+	<div class="pictureAndText clearfix">
+			<div class="picture"><img src="./images/icon.jpg" alt="logo"></div>
+			<div class="text">
+					<span class="welcome">HELLO
+							<span class="triangle"></span>
+					</span>
+					<h1>张三</h1>
+					<p>前端工程师</p>
+					<hr>
+					<dl class="clearfix">
+							<dt>年龄</dt>
+							<dd>18</dd>
+							<dt>所在城市</dt>
+							<dd>北京</dd>
+							<dt>手机</dt>
+							<dd>13812345678</dd>
+							<dt>邮箱</dt>
+							<dd>535435@qq.com</dd>
+					</dl>
 			</div>
-			<footer class="media">
-					<a href=""><svg class="icon" aria-hidden="true">
-							<use xlink:href="#icon-github"></use>
-					</svg></a>
-					<a href=""><svg class="icon" aria-hidden="true">
-							<use xlink:href="#icon-weibo"></use>
-					</svg></a>
-					<a href=""><svg class="icon" aria-hidden="true">
-							<use xlink:href="#icon-twitter"></use>
-					</svg></a>
-			</footer>
 	</div>
+	<footer class="media">
+			<a href=""><svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-github"></use>
+			</svg></a>
+			<a href=""><svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-weibo"></use>
+			</svg></a>
+			<a href=""><svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-twitter"></use>
+			</svg></a>
+	</footer>
+</div>
+```
 首先需要为卡片的结构进行一个划分，整个卡片一用一个大的DIV分类。根据需求初步分为上下结构，上部分是pictureAndText，下面是footer。但是需要为了达到左右布局的效果 ，在pictureAndText还需要内在进行一个div的划分，分为picture和text两个div方便进行左右的布局。
 主要css代码
 ```
@@ -70,6 +71,7 @@ HTML代码结构
 }
 ```
 上面两句css代码实现的效果是为整个卡片设置一个最大的宽度，margin： auto; 是为了使得大卡片div水平居中，这是一个常规的套路，能使一个有宽度的div水平居中的。前提是有一个宽度。
+
 ```
 .userCard .picture,
 .userCard .text{
@@ -79,7 +81,9 @@ HTML代码结构
 	width: 470px;
 }
 ```
+
 上面两句代码实现的水平左右布局，谨记在父元素上加上clearfix类。还有一点是float元素会整体收缩，如果宽度是有要求的，那就不得不为text整个div加上宽度。
+
 ```
 .userCard .text dl dd,
 .userCard .text dl dt {
@@ -88,12 +92,14 @@ HTML代码结构
 	margin-bottom: 25px;
 }
 ```
+
 上面两句主要是卫视实现了如图样式
 [!截图3.png](https://i.loli.net/2018/05/09/5af2e973a0127.png)
 这里关键在于设置宽度为width: 50%，这表示一行只能够有两个元素。实现每行只有两个元素组成一组数据。
 
 引入ICON
 在iconfont.cn选择合适的icon按照提示引入页面。
+
 ```
 .userCard footer{
 	background: #e8676b;
