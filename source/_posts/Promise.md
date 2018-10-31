@@ -4,7 +4,7 @@ date: 2018-10-31 11:12:12
 tags:
 ---
 
-#初识Promise
+
 Promise写法
 ```
 let test = function (a) {
