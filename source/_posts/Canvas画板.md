@@ -20,7 +20,7 @@ var ctx = canvas.getContext('2d');
 
 ctx.fillStyle = "rgb(200,0,0)";  //填充的颜色
 ctx.fillRect (10, 10, 55, 50);  //准确来说是填充一个矩形
-``
+```
 fillRect(x，y，width,height)接受四个参数：x与y指定了在canvas画布上所绘制的矩形的左上角（相对于原点）的坐标。width和height设置矩形的尺寸。
 strokeRect(x, y, width, height) 绘制一个矩形的边框
 clearRect(x, y, width, height) 清除一个矩形
